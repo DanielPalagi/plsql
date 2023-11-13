@@ -1,0 +1,47 @@
+CREATE OR REPLACE FUNCTION cst_substr(p_valor VARCHAR2,
+                                      p_pos1  NUMBER,
+                                      p_pos2  NUMBER) RETURN VARCHAR2 IS
+
+  
+  /*
+  
+  ** CRIAÇÃO **
+  ____________________________________________________________________________________________________________________________________________________
+  Criação          : Daniel                                                                                                                          |
+  Data             : 06/11/2023 10:00                                                                                                                |
+  Módulo Principal :                                                                                                                                 |
+  Módulos          :                                                                                                                                 |
+  Utilizado        : Para tratar relatórios com campo de texto com necessidade de extração exata.                                                    |
+  Objetivo         : Função utilizada para recuperar um trecho de um texto com o caractere inicial e final, diferente do substr que trás a informação|
+                     do caractere inicial e a soma de caracteres a partir do primeiro caractere informado.                                           |
+                                                                                                                                                     |
+
+  ** ALTERAÇÕES **
+  ____________________________________________________________________________________________________________________________________________________
+    Responsável           | Data        | Chamado | Motivo                                                                                           |
+                          |             |         |                                                                                                  |
+
+   
+  ** OBSERVAÇÕES **                                                      
+  ____________________________________________________________________________________________________________________________________________________
+                                                                                                                                                     |
+                                                                                                                                                     |
+  */  
+  
+  v_valor   VARCHAR2(4000);
+  
+BEGIN
+
+  FOR a IN 1 .. p_pos2 LOOP
+    
+  IF a >= p_pos1 AND a <= p_pos2 THEN
+  
+      v_valor := v_valor || substr(p_valor, a, 1);
+    
+  END IF;
+  
+  END LOOP;
+
+  RETURN v_valor;
+
+END;
