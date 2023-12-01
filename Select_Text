@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION cst_substr(p_valor VARCHAR2,
+CREATE OR REPLACE FUNCTION buscar_caractere(p_valor VARCHAR2,
                                       p_pos1  NUMBER,
                                       p_pos2  NUMBER) RETURN VARCHAR2 IS
 
@@ -7,7 +7,7 @@ CREATE OR REPLACE FUNCTION cst_substr(p_valor VARCHAR2,
   
   ** CRIAÇÃO **
   ____________________________________________________________________________________________________________________________________________________
-  Criação          : Daniel                                                                                                                          |
+  Criação          : Daniel Palagi                                                                                                                   |
   Data             : 06/11/2023 10:00                                                                                                                |
   Módulo Principal :                                                                                                                                 |
   Módulos          :                                                                                                                                 |
@@ -26,7 +26,7 @@ CREATE OR REPLACE FUNCTION cst_substr(p_valor VARCHAR2,
   ____________________________________________________________________________________________________________________________________________________
                                                                                                                                                      |
                                                                                                                                                      |
-  */  
+  */
   
   v_valor   VARCHAR2(4000);
   
